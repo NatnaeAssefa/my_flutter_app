@@ -47,6 +47,29 @@ class MyHomePage extends StatelessWidget {
             },
             child: Text('Next'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  // Return the AlertDialog widget
+                  return AlertDialog(
+                    title: Text('Alert!'),
+                    content: Text('Your button was pressed!'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context); // Close the dialog
+                        },
+                        child: Text('OK'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Text('Next'),
+          ),
         ],
       ),
     );
